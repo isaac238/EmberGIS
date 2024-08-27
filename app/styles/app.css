@@ -1,0 +1,120 @@
+.hidden {
+  display: none;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#map {
+  box-sizing: border-box;
+  height: 95vh;
+  width: 95vw;
+}
+
+#sidebar {
+  height: 95vh;
+  padding: .5rem;
+}
+
+.source-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.source-header h3 {
+  margin: 0;
+}
+
+.expand {
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #ccc;
+  outline: inherit;
+  border: none;
+  color: black;
+  height: 2rem;
+  width: 2rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expand:hover {
+  background-color: #aaa;
+}
+
+
+#file_input_wrapper {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-direction: column;
+}
+#place_input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  box-sizing: border-box;
+}
+
+.polygons {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.polygon {
+  display: flex;
+  gap: 0.2rem;
+  height: 2.5rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.flyto {
+  margin: 0;
+  background-color: #ccc;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: inherit;
+  cursor: pointer;
+}
+
+.flyto:hover {
+  background-color: #aaa;
+}
+
+.delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: .25rem;
+  color: white;
+  background-color: red;
+  border-radius: 20%;
+  outline: inherit;
+  border: none;
+  width: 3rem;
+}
+
+.delete:hover {
+  background-color: darkred;
+}

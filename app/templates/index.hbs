@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<div id="sidebar">
+  {{ input value=placeInput placeholder="Enter a place" id="place_input"  change=(action 'getPolygon' placeInput)}}
+  <div id="file_input_wrapper">
+    <label for="file_input">Upload a kml file</label>
+    {{ input multiple="true" value=files id="file_input" type="file" accept=".kml" change=(action 'uploadKML') }}
+  </div>
+
+  {{#each-in this.sources as |source layers|}}
+    <div class="source-header">
+      <h3>{{source}}</h3>
+      <button class="expand" onclick={{action 'toggleSource' source}}><IconifyIcon @icon='mdi:expand-more' /></button>
+    </div>
+    <ul class="polygons hidden" id="{{source}}-polygons">
+      {{#each-in layers as |place layer|}}
+        <li class="polygon">
+          <button class="flyto" onclick={{action flyTo source place}}>{{place}}</button>
+          <button class="delete" onclick={{action 'removeLayer' source place}}>
+            <IconifyIcon @icon='material-symbols:delete' />
+          </button>
+        </li>
+      {{/each-in}}
+    </ul>
+  {{/each-in}}
+</div>
+<div id="map"></div>
